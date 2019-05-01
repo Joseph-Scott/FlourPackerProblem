@@ -39,11 +39,23 @@ public class FlourPacker {
             return false;
         }
 
-        if ((bigCount + smallCount) == goal) {
-            return true;
+        bigCount = bigCount * 5;
+
+        if ((bigCount + smallCount) < goal) {
+            return false;
+
+        } else if ((bigCount + smallCount) > goal) {
+            if (goal % 5 <= smallCount) {
+                return true;
+
+            }
+
+        } else {
+            return false;
+
         }
 
-
+        return false;
 
     }
 
